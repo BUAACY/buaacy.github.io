@@ -1,57 +1,33 @@
 {
-  "name": "Shubo Xu",
-  "title": "Senior Algorithm Engineer",
-  "profileImage": "assets/anleeno-home-profile.png",
-  "brandLogo": "assets/anleeno-still-deer-script.png",
+  "name": "Yongkang Zhang",
+  "title": "Ph.D. Student at Beihang University",
+  "profileImage": "assets/zyk.jpg",
+  "brandLogo": "assets/leftup-logo.png",
   "descriptions": [
     {
       "icon": "openai",
-      "text": "CV & MLLM Researcher"
+      "text": "Computer Vision & Multimodal Large Language Models"
     },
     {
       "icon": "sparkles",
-      "text": "AIGC & AI Agents Explorer"
+      "text": "Post-training & AI Agents"
     },
     {
       "icon": "camera",
       "text": "Photography Enthusiast · Dreamer"
     }
   ],
-  "primaryLinks": [
-    {
-      "label": "Portfolio",
-      "url": "https://encore.anleeno.com"
-    },
-    {
-      "label": "Soundscape",
-      "url": "https://encore.anleeno.com/music"
-    }
-  ],
+  "primaryLinks": [],
   "socialLinks": [
     {
       "label": "Email",
       "icon": "email",
-      "url": "mailto:xushubo0805@gmail.com"
-    },
-    {
-      "label": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/Anleeno/anleeno-academic"
+      "url": "mailto:zhangyongkang1107@gmail.com"
     },
     {
       "label": "Google Scholar",
       "icon": "scholar",
-      "url": "https://scholar.google.com/citations?hl=en&user=Ih094PwAAAAJ&view_op=list_works&sortby=pubdate"
-    },
-    {
-      "label": "LinkedIn",
-      "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/anleeno0805"
-    },
-    {
-      "label": "Instagram",
-      "icon": "instagram",
-      "url": "https://www.instagram.com/anleeno_ss"
+      "url": "https://scholar.google.com/citations?user=wMT92uYAAAAJ&hl=en"
     }
   ]
 }

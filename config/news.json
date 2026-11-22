@@ -1,61 +1,88 @@
 [
-  {
-    "date": "2026.08",
+    {
+    "date": "2026.02.21",
     "segments": [
       {
-        "text": "Joined "
+        "text": "🎉One paper: "
       },
       {
-        "text": "ByteDance",
+        "text": "VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation", "strong": true,
+        "href": "https://nave.vr3i.com/attached/file/20260330/20260330195559_866.pdf"
+      },
+      {
+        "text": " was accepted by "
+      },
+      {
+        "text": "CVPR 2026",
+        "href": "https://nave.vr3i.com/attached/file/20260330/20260330195559_866.pdf"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "date": "2025.06.26",
+    "segments": [
+      {
+        "text": "🎉One paper: "
+      },
+      {
+        "text": "Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection", "strong": true,
+        "href": "https://ieeexplore.ieee.org/abstract/document/11443564"
+      },
+      {
+        "text": " was accepted by "
+      },
+      {
+        "text": "ICCV 2025",
+        "href": "https://ieeexplore.ieee.org/abstract/document/11443564"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "date": "2024.09.06",
+    "segments": [
+      {
+        "text": "🎉One paper: "
+      },
+      {
+        "text": "Bullet-Screen-Emoji Attack With Temporal Difference Noise for Video Action Recognition", "strong": true,
+        "href": "https://ieeexplore.ieee.org/abstract/document/10669043"
+      },
+      {
+        "text": " was accepted by "
+      },
+      {
+        "text": "IEEE TCSVT",
+        "href": "https://ieeexplore.ieee.org/abstract/document/10669043"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "date": "2026.08.14",
+    "segments": [
+      {
+        "text": "🎉One paper: "
+      },
+      {
+        "text": "NewsCourt: A Collaboration-of-MLLMs framework for Explainable Short Video Fake News Detection", "strong": true
+      },
+      {
+        "text": " was accepted by "
+      },
+      {
+        "text": "ICONIP 2026",
         "strong": true
       },
       {
-        "text": ", focusing on MLLMs and Agents."
-      }
-    ]
-  },
-  {
-    "date": "2026.07",
-    "segments": [
-      {
-        "text": "Our paper "
-      },
-      {
-        "text": "DPC-VQA",
-        "href": "https://arxiv.org/pdf/2604.12813"
-      },
-      {
-        "text": " was accepted by ACM MM'26."
-      }
-    ]
-  },
-  {
-    "date": "2026.01",
-    "segments": [
-      {
-        "text": "Released the preprint "
-      },
-      {
-        "text": "LEAF",
-        "href": "https://arxiv.org/pdf/2601.20689"
-      },
-      {
-        "text": ", a label-efficient image quality assessment framework."
-      }
-    ]
-  },
-  {
-    "date": "2025.07",
-    "segments": [
-      {
-        "text": "Our team placed "
-      },
-      {
-        "text": "Top 2",
-        "strong": true
-      },
-      {
-        "text": " in the VQualA 2025 Challenge; the report appeared at the ICCV workshop."
+        "text": ", (Oral)."
       }
     ]
   }

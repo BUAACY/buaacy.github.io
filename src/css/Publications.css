@@ -59,10 +59,30 @@
     background: #acacac;
 }
 
+
+/* Oral / Rank Tag */
+.venue-tag.oral {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    border: 1px solid rgba(175, 128, 57, 0.24);
+    background: #fbf7ef;
+    color: #8b642c;
+    padding-inline: 8px;
+}
+
 .venue-tag.ccf {
     border: 1px solid var(--theme-color-pale);
     background: #fff;
     color: var(--theme-text-color);
+    padding-inline: 8px;
+}
+
+/* Journal Quartile Tag */
+.venue-tag.quartile {
+    background: #ede9fe;
+    color: #6d28d9;
+    border: 1px solid #c4b5fd;
     padding-inline: 8px;
 }
 

@@ -61,7 +61,7 @@
       }
     },
     "about": {
-      "type": "object", "additionalProperties": false, "required": ["paragraphs", "quote"],
+      "type": "object", "additionalProperties": false, "required": ["paragraphs"],
       "properties": {
         "paragraphs": { "type": "array", "items": { "$ref": "#/$defs/segments" } },
         "quote": { "type": "object", "additionalProperties": false, "required": ["text", "author"], "properties": { "text": { "$ref": "#/$defs/text" }, "author": { "$ref": "#/$defs/text" } } }
@@ -78,7 +78,9 @@
         "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
         "title": { "$ref": "#/$defs/text" }, "image": { "$ref": "#/$defs/asset" }, "abstract": { "type": "string" },
         "authors": { "$ref": "#/$defs/segments" }, "venue": { "$ref": "#/$defs/text" },
-        "venueType": { "enum": ["conference", "journal", "preprint", "workshop"] }, "ccf": { "$ref": "#/$defs/text" },
+        "venueType": { "enum": ["conference", "journal", "preprint", "workshop"] },
+        "ccf": { "$ref": "#/$defs/text" },
+        "quartile": { "$ref": "#/$defs/text" },
         "tags": { "type": "array", "items": { "$ref": "#/$defs/text" } },
         "link": { "$ref": "#/$defs/link" }, "pdfUrl": { "type": "string", "pattern": "^https?://", "description": "Optional CORS-enabled remote PDF URL for the paper reader." }, "citation": { "$ref": "#/$defs/text" },
         "authorTag": { "type": "object", "additionalProperties": false, "required": ["label", "type"], "properties": { "label": { "$ref": "#/$defs/text" }, "type": { "$ref": "#/$defs/text" } } }

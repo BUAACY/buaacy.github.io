@@ -62,8 +62,32 @@ export default function Publications() {
             <img className="publication-image" src={paper.image} alt="" loading="lazy" decoding="async" />
             <div className="publication-content">
               <div className="publication-venue">
-                <span className={`venue-tag ${paper.venueType}`}>{paper.venue}</span>
-                {paper.ccf && <span className="venue-tag ccf">{paper.ccf}</span>}
+
+                <span className={`venue-tag ${paper.venueType}`}>
+                  {paper.venue}
+                </span>
+
+                {paper.ccf && (
+                  <span className="venue-tag ccf">
+                    {paper.ccf}
+                  </span>
+                )}
+
+                {paper.authorTag?.type === "rank" && (
+                  <span className="venue-tag oral">
+                    <span className="challenge-trophy" aria-hidden="true">
+                      🏆
+                    </span>
+                    {paper.authorTag.label}
+                  </span>
+                )}
+
+                {paper.quartile && (
+                  <span className="venue-tag quartile">
+                    {paper.quartile}
+                  </span>
+                )}
+
               </div>
               <h3 className="publication-title">
                 {paper.abstract ? (
@@ -78,8 +102,17 @@ export default function Publications() {
               <div className="publication-author-row">
                 <div className="publication-authors">{paper.authors.map((author, index) => author.strong ? <strong key={index}>{author.text}</strong> : <React.Fragment key={index}>{author.text}</React.Fragment>)}</div>
                 <div className="publication-author-tags">
-                  {Number.isFinite(citationCount) && citationCount > 0 && <span className="publication-author-tag is-citation">Cited by {citationCount}</span>}
-                  {paper.authorTag && <span className={`publication-author-tag is-${paper.authorTag.type}`}>{paper.authorTag.type === "rank" && <span className="challenge-trophy" aria-hidden="true">🏆</span>}{paper.authorTag.label}</span>}
+                  {Number.isFinite(citationCount) && citationCount > 0 && (
+                    <span className="publication-author-tag is-citation">
+                      Cited by {citationCount}
+                    </span>
+                  )}
+
+                  {paper.authorTag && paper.authorTag.type !== "rank" && (
+                    <span className={`publication-author-tag is-${paper.authorTag.type}`}>
+                      {paper.authorTag.label}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="publication-tags">{paper.tags.map((tag) => <span className="tag-item-show" key={tag}>{tag}</span>)}</div>

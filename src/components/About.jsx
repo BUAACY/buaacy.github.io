@@ -26,9 +26,15 @@ export default function About() {
             : <React.Fragment key={segmentIndex}>{segment.text}</React.Fragment>)}
           {paragraphIndex < about.paragraphs.length - 1 && <><br /><br /></>}
         </React.Fragment>)}
-        <InfoCallout icon={Quote} footer={about.quote.author} variant="quote">
+        {about.quote?.text?.trim() && (
+         <InfoCallout
+          icon={Quote}
+          footer={about.quote.author}
+          variant="quote"
+         >
           {about.quote.text}
-        </InfoCallout>
+         </InfoCallout>
+     )}
       </div>
     </section>
   );

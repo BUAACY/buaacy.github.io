@@ -1,84 +1,103 @@
 [
   {
-    "id": "dpc-vqa",
-    "image": "assets/publications/2026-dpc-vqa.png",
-    "title": "DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment",
-    "abstract": "Recent multimodal large language models (MLLMs) have shown promising performance on video quality assessment (VQA) tasks. However, adapting them to new scenarios remains expensive due to large-scale retraining and costly mean opinion score (MOS) annotations. In this paper, we argue that a pretrained MLLM already provides a useful perceptual prior for VQA, and that the main challenge is to efficiently calibrate this prior to the target MOS space. Based on this insight, we propose DPC-VQA, a decoupling perception and calibration framework for video quality assessment. Specifically, DPC-VQA uses a frozen MLLM to provide a base quality estimate and perceptual prior, and employs a lightweight calibration branch to predict a residual correction for target-scenario adaptation. This design avoids costly end-to-end retraining while maintaining reliable performance with lower training and data costs. Extensive experiments on both user-generated content (UGC) and AI-generated content (AIGC) benchmarks show that DPC-VQA achieves competitive performance against representative baselines, while using less than 2% of the trainable parameters of conventional MLLM-based VQA methods and remaining effective with only 20% of MOS labels. The code will be released upon publication.",
+    "id": "vmd-fact",
+    "image": "assets/publications/VMD_FACT.png",
+    "title": "VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation",
+    "abstract": "The rapid evolution of generative AI, including such models as Sora, has intensified the threat of video misinformation. A critical challenge in detecting these AI-generated video misinformation lies in a fundamental disconnect between existing datasets and practical deception tactics. Cur rent datasets often disrupt cross-modal consistency through editing techniques, resulting in unrealistic and easily de tectable artifacts. By contrast, generative video misinfor mation strives for semantic consistency across modalities to remain realism. To address this gap, we introduce RAVM: the first Realistic AI-Generated Video Misinformation De tection Dataset. Unlike existing Video Misinformation De tection (VMD) datasets that are limited to single-source manipulations, RAVM encompasses multiple manipulation sources—Claim, Video, Audio, and Cross-Modal Manipula tion—each incorporating diverse manipulation techniques to generate realistic AI-generated video misinformation. To achieve this, we introduce an agent-driven framework for generating realistic video misinformation. Furthermore, we propose an IEEG model that represents multimodal ev idence, fact-checking results, and their dependencies as an evidence graph for interpretable detection of AI-generated video misinformation. Extensive experiments on RAVM re veal the vulnerability of existing Multimodal Large Lan guage Models (MLLMs) in detecting AI-generated video misinformation, while the proposed IEEG achieves state of-the-art performance on RAVM.",
     "authors": [
       {
-        "text": "X. Li, "
-      },
-      {
-        "text": "S. Xu",
+        "text": "Yongkang Zhang, ",
         "strong": true
       },
       {
-        "text": ", Z. Zhang, Z. Cai, Y. Chen, and G. Zhai"
+        "text": "Dongyu She, Baiyu Ji, Qichuan Geng, Zhong Zhou, and Yan Wang"
       }
     ],
-    "venue": "ACM MM '26",
+    "venue": "CVPR '26",
     "ccf": "CCF A",
     "venueType": "conference",
     "tags": [
-      "Video Quality Assessment",
-      "MLLM",
-      "Few-shot",
-      "AIGC"
+      "Video Misinformation Detection",
+      "MLLM"
     ],
-    "link": "https://arxiv.org/pdf/2604.12813",
-    "citation": "X. Li, S. Xu, Z. Zhang, Z. Cai, Y. Chen, and G. Zhai, “DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment,” arXiv preprint arXiv:2604.12813, 2026."
+    "link": "https://nave.vr3i.com/attached/file/20260330/20260330195559_866.pdf",
+    "citation": "@inproceedings{zhang2026vmd, title={VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation}, author={Zhang, Yongkang and She, Dongyu and Ji, Baiyu and Geng, Qichuan and Zhou, Zhong and Wang, Yan}, booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages={21284--21294}, year={2026}}"
   },
   {
-    "id": "leaf",
-    "image": "assets/publications/2026-leaf.png",
-    "title": "Decoupling Perception and Calibration: Label-Efficient Image Quality Assessment Framework",
-    "abstract": "Recent multimodal large language models (MLLMs) have demonstrated strong capabilities in image quality assessment (IQA) tasks. However, adapting such large-scale models is computationally expensive and still relies on substantial Mean Opinion Score (MOS) annotations. We argue that for MLLM-based IQA, the core bottleneck lies not in the quality perception capacity of MLLMs, but in MOS scale calibration. Therefore, we propose LEAF, a Label-Efficient Image Quality Assessment Framework that distills perceptual quality priors from an MLLM teacher into a lightweight student regressor, enabling MOS calibration with minimal human supervision. Specifically, the teacher conducts dense supervision through point-wise judgments and pair-wise preferences, with an estimate of decision reliability. Guided by these signals, the student learns the teacher's quality perception patterns through joint distillation and is calibrated on a small MOS subset to align with human annotations. Experiments on both user-generated and AI-generated IQA benchmarks show that our method significantly reduces the need for human annotations while maintaining strong MOS-aligned correlations, making lightweight IQA practical under limited annotation budgets.",
+    "id": "aplgos",
+    "image": "assets/publications/iccv2025_aplgos.png",
+    "title": "Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-Of-Distribution Detection",
+    "abstract": "Out-of-distribution (OOD) detection aims to distinguish whether detected objects belong to known categories or not. Existing methods extract OOD samples from Indistribution (ID) data to regularize the model's decision boundaries. However, the decision boundaries are not adequately regularized because the model does not have sufficient knowledge about the distribution of OOD data. To address the above issue, we propose an Adaptive Prompt Learning framework via Gaussian Outlier Synthesis (APLGOS) for OOD detection. Specifically, we leverage the Vision-Language Model (VLM) to initialize learnable ID prompts by sampling standardized results from pre-defined Q&A pairs. Region-level prompts are synthesised in lowlikelihood regions of class-conditional gaussian distributions. These prompts are then utilized to initialize learnable OOD prompts and optimized with adaptive prompt learning. Also, OOD pseudo-samples are synthesised via gaussian outlier synthesis. The aforementioned methodology regularizes the model to learn more compact decision boundaries for ID and OOD categories. Extensive experiments show that APLGOS achieves state-of-the-art performance with less ID data on four mainstream datasets.",
     "authors": [
       {
-        "text": "X. Li, Z. Zhang, Z. Xu, "
-      },
-      {
-        "text": "S. Xu",
+        "text": "Yongkang Zhang, ",
         "strong": true
       },
       {
-        "text": ", X. Min, Y. Chen, and G. Zhai"
+        "text": "Dongyu She, and Zhong Zhou"
       }
     ],
-    "venue": "Preprint '26",
-    "venueType": "preprint",
+    "venue": "ICCV '25",
+    "ccf": "CCF A",
+    "venueType": "conference",
     "tags": [
-      "Image Quality Assessment",
-      "Knowledge Distillation",
-      "Label-Efficient Learning"
+      "Out-of-Distribution Detection",
+      "Prompt Learning"
     ],
-    "link": "https://arxiv.org/pdf/2601.20689",
-    "citation": "X. Li, Z. Zhang, Z. Xu, S. Xu, X. Min, Y. Chen, and G. Zhai, “Decoupling Perception and Calibration: Label-Efficient Image Quality Assessment Framework,” arXiv preprint arXiv:2601.20689, 2026."
+    "link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11443564",
+    "citation": "@inproceedings{zhang2025adaptive, title={Adaptive prompt learning via gaussian outlier synthesis for out-of-distribution detection}, author={Zhang, Yongkang and She, Dongyu and Zhou, Zhong}, booktitle={2025 IEEE/CVF International Conference on Computer Vision (ICCV)}, pages={3235--3244}, year={2025}, organization={IEEE}}"
   },
   {
-    "id": "vquala",
-    "image": "assets/publications/2025-vqc-cha.png",
-    "title": "VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models: Methods and Results",
-    "abstract": "This paper presents a summary of the VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models (LMMs), hosted as part of the ICCV 2025 Workshop on Visual Quality Assessment. The challenge aims to evaluate and enhance the ability of state-of-the-art LMMs to perform open-ended and detailed reasoning about visual quality differences across multiple images. To this end, the competition introduces a novel benchmark comprising thousands of coarse-to-fine grained visual quality comparison tasks, spanning single images, pairs, and multi-image groups. Each task requires models to provide accurate quality judgments. The competition emphasizes holistic evaluation protocols, including 2AFC-based binary preference and multi-choice questions (MCQs). Around 100 participants submitted entries, with five models demonstrating the emerging capabilities of instruction-tuned LMMs on quality assessment. This challenge marks a significant step toward open-domain visual quality reasoning and comparison and serves as a catalyst for future research on interpretable and human-aligned quality evaluation systems.",
+    "id": "bse",
+    "image": "assets/publications/tcsvt2024_bse.png",
+    "title": "Bullet-Screen-Emoji Attack With Temporal Difference Noise for Video Action Recognition",
+    "abstract": "Recent studies have shown that video action recognition models are also vulnerable to fooling by adversarial samples. However, currently existing video attack methods usually require high computational overhead (e.g., they generate adversarial perturbations for all frames by default), and most of them are difficult to implement printable attacks in the physical world. To address the above issues, we devise a novel efficient and effective framework for video action recognition attack: Bullet-Screen-Emoji Attack with Temporal Difference Noise (BSE), a reinforcement learning-based black-box attack method that fools the model by simply generating adversarial bullet screens for key frame and scrolling them on clean video. The agent is optimized to make the optimal actions, i.e., searching key frame. Moreover, we introduce a simple and effective temporal difference noise to enhance the attack capability of the adversarial bullet screen and accelerate the convergence speed. Most importantly, BSE enables printable physical attacks. Extensive experiments show that our proposed BSE achieves promising attack performance on mainstream datasets (HMDB51, UCF101 and Kinetics-400) and in the physical world with high efficiency.",
     "authors": [
       {
-        "text": "H. Zhu et al."
+        "text": "Yongkang Zhang, ",
+        "strong": true
+      },
+      {
+        "text": "Han Zhang, Jun Li, Zhiping Shi, Jian Yang, Kaixin Yang, Shuo Yin, Qiuyan Liang, and Xianglong Liu"
+      }
+    ],
+    "venue": "IEEE TCSVT",
+    "ccf": "CCF B",
+    "quartile": "CAS Zone 1",
+    "venueType": "journal",
+    "tags": [
+      "Adversarial Attack",
+      "Video Action Recognition"
+    ],
+    "link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10669043",
+    "citation": "@article{zhang2024bullet, title={Bullet-screen-emoji attack with temporal difference noise for video action recognition}, author={Zhang, Yongkang and Zhang, Han and Li, Jun and Shi, Zhiping and Yang, Jian and Yang, Kaixin and Yin, Shuo and Liang, Qiuyan and Liu, Xianglong}, journal={IEEE Transactions on Circuits and Systems for Video Technology}, volume={35}, number={1}, pages={589--600}, year={2024}, publisher={IEEE}}"
+  },
+  {
+    "id": "newscourt",
+    "image": "assets/publications/iconip2026_newscourt.png",
+    "title": "NewsCourt: A Collaboration-of-MLLMs framework for Explainable Short Video Fake News Detection",
+    "abstract": "With the rapid development of the Internet, short videos have become an integral part of digital media and everyday communication. Due to their high information density and greater appeal, short videos are frequently used to dis seminate fake news. Short video fake news detection (SVFND) involves inferring the veracity of news videos by effectively modeling multimodal information, mak ing it a highly challenging task. Existing research utilizes small-scale multimodal models to fuse and model multimodal features in order to infer the veracity of short video fake news. However, these methods lack sufficient capture of the fake news features and have limited interpretability in their inferences. In this pa per, we propose NewsCourt, a collaboration Multimodal Large Language Models (MLLMs) framework for explainable short video fake news detection. Specifi cally, we employ multiple fine-tuned MLLMs, each obtained through multimodal instruction tuning and dedicated to a specific perspective, collectively conducting a comprehensive, multi-perspective evaluation of short video fake news. Then, a Large Language Model (LLM) serves as a judge, making the final decision by leveraging multimodal evidence to improve cross-modal context understanding. Extensive experimental results on two datasets demonstrate that NewsCourt out performs state-of-the-art methods while also providing persuasive explanations.",
+    "authors": [
+      {
+        "text": "Yongkang Zhang, ",
+        "strong": true
+      },
+      {
+        "text": "Dongyu She, Baiyu Ji, Qichuan Geng, Zhenbo Wang, and Zhou Zhong"
       }
     ],
     "authorTag": {
-      "label": "Challenge Top 2",
+      "label": "Oral",
       "type": "rank"
     },
-    "venue": "ICCVW '25",
-    "ccf": "CCF A",
+    "venue": "ICONIP '26",
+    "ccf": "CCF C",
     "venueType": "conference",
     "tags": [
-      "Visual Quality Comparison",
-      "LMM Evaluation",
-      "Benchmark"
+      "Video Misinformation Detection",
+      "MLLM"
     ],
-    "link": "https://openaccess.thecvf.com/content/ICCV2025W/VQualA/papers/Zhu_VQualA_2025_Challenge_on_Visual_Quality_Comparison_for_Large_Multimodal_ICCVW_2025_paper.pdf",
-    "pdfUrl": "https://arxiv.org/pdf/2509.09190",
-    "citation": "H. Zhu et al., “VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models: Methods and Results,” in Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV) Workshops, 2025, pp. 3383–3393."
+    "link": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10669043",
+    "citation": "@article{zhang2024bullet, title={Bullet-screen-emoji attack with temporal difference noise for video action recognition}, author={Zhang, Yongkang and Zhang, Han and Li, Jun and Shi, Zhiping and Yang, Jian and Yang, Kaixin and Yin, Shuo and Liang, Qiuyan and Liu, Xianglong}, journal={IEEE Transactions on Circuits and Systems for Video Technology}, volume={35}, number={1}, pages={589--600}, year={2024}, publisher={IEEE}}"
   }
 ]

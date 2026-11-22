@@ -1,52 +1,27 @@
 [
   {
-    "organization": "ByteDance Inc.",
-    "logo": "assets/ByteDance.png",
-    "period": "2026.08 — Present",
-    "location": "Shanghai, China",
-    "role": "Senior MLLM Algorithm Engineer",
-    "details": [
-      {
-        "label": "Scope:",
-        "text": "Contributed to MLLM and agentic applications across TikTok, Doubao, and the local-services ecosystems, including an MLLM-driven spatial perception system based on in-cabin and dashcam imagery."
-      },
-      {
-        "label": "Key Work:",
-        "text": "Applied VLM post-training techniques, including supervised fine-tuning (SFT) and reinforcement learning, to support road-scene understanding, spatial generation, and AI agents."
-      }
-    ]
-  },
-  {
-    "organization": "Baidu Inc.",
-    "logo": "assets/baidu.svg",
-    "period": "2025.01 — 2026.06",
+    "organization": "Zhongguancun Laboratory",
+    "logo": "assets/zhongguancun.png",
+    "period": "2024.01 — Present",
     "location": "Beijing, China",
-    "role": "Senior Multimodal Algorithm Engineer",
+    "role": "Visiting Ph.D. Student",
     "details": [
       {
-        "label": "Scope:",
-        "text": "Contributed to multimodal search and educational AI systems in AI Assistant, spanning open-world image understanding, Vision-Grounded RAG, VLM post-training, and autonomous vision-language agents."
-      },
-      {
         "label": "Key Work:",
-        "text": "Worked on intent-aware, fine-grained vision-grounded RAG for AI search and feedback-driven reasoning with tool orchestration for educational agents. Also developed DORIS to jointly detect and rank objects for recommendation in visual search."
+        "text": "Research on Theories and Technologies for Cognitive Carrier Security."
       }
     ]
   },
   {
-    "organization": "Hello Ltd.",
-    "logo": "assets/hello.png",
-    "period": "2023.06 — 2024.12",
-    "location": "Shanghai, China",
-    "role": "CV Algorithm Engineer",
+    "organization": "Beihang University",
+    "logo": "assets/beihang.png",
+    "period": "2023.09 — Present",
+    "location": "Beijing, China",
+    "role": "Ph.D. Student",
     "details": [
       {
-        "label": "Scope:",
-        "text": "Contributed advanced computer vision solutions across cloud, mobile, and edge platforms for smart-city, transportation, and risk-control applications."
-      },
-      {
         "label": "Key Work:",
-        "text": "Developed edge-cloud collaborative multi-state visual perception for micro-mobility intelligent transportation platforms."
+        "text": "Focusing on key technologies, including multimodal large language model (MLLM) post-training, reinforcement learning, AI agents, video understanding and reasoning, and cross-modal evidence alignment, with an emphasis on enhancing multimodal reasoning capabilities and improving the reliability of multimodal misinformation detection."
       }
     ]
   }

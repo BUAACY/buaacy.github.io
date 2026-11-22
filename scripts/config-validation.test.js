@@ -17,48 +17,136 @@ test("missing required fields report their file and location", () => {
   delete config["hero.json"].primaryLinks;
   assert.match(validateConfigs(config).join("\n"), /hero.json.*primaryLinks/);
 });
+
 test("duplicate publication IDs and unknown preview IDs are rejected", () => {
   const config = loadConfigs();
-  config["publications.json"][1].id = config["publications.json"][0].id;
+
+  // Create a duplicate using an existing publication.
+  config["publications.json"].push({
+    ...config["publications.json"][0],
+  });
+
+  // Introduce a preview with no matching publication.
+  config["publication-previews.json"] = {
+    "missing-paper": { template: "basic" },
+  };
+
   const errors = validateConfigs(config).join("\n");
+
   assert.match(errors, /duplicate ID/);
-  assert.match(errors, /leaf: no publication/);
+  assert.match(errors, /missing-paper: no publication/);
 });
+
 test("publications without custom previews are valid", () => {
   const config = loadConfigs();
+
   config["publication-previews.json"] = {};
+
   assert.deepEqual(validateConfigs(config), []);
 });
+
 test("missing assets and invalid chart values are rejected", () => {
   const config = loadConfigs();
-  config["publication-previews.json"]["dpc-vqa"].rows[0].value = "2";
+  const paperId = config["publications.json"][0].id;
+
+  config["publication-previews.json"] = {
+    [paperId]: {
+      template: "basic",
+      figure: "assets/nonexistent-test-file.png",
+      rows: [
+        {
+          label: "Example",
+          value: "2",
+        },
+      ],
+    },
+  };
+
   const errors = validateConfigs(config, () => false).join("\n");
+
   assert.match(errors, /asset not found/);
   assert.match(errors, /rows\/0\/value/);
 });
+
 test("layout-specific fields and unknown keys are checked", () => {
   const config = loadConfigs();
-  delete config["publication-previews.json"].leaf.ablationRows;
-  assert.match(validateConfigs(config).join("\n"), /ablationRows: required/);
+  const paperId = config["publications.json"][0].id;
+
+  config["publication-previews.json"] = {
+    [paperId]: {
+      template: "budget",
+    },
+  };
+
+  assert.match(
+    validateConfigs(config).join("\n"),
+    /ablationRows: required/
+  );
+
   config["education.json"].enable = true;
-  assert.match(validateConfigs(config).join("\n"), /additionalProperty.*enable/);
+
+  assert.match(
+    validateConfigs(config).join("\n"),
+    /additionalProperty.*enable/
+  );
 });
 
 test("fixed templates support minimal basic, narrative and legacy layout configs", () => {
   const config = loadConfigs();
-  const original = config["publication-previews.json"]["dpc-vqa"];
-  config["publication-previews.json"]["dpc-vqa"] = { template: "basic", abstractExpanded: true };
-  assert.deepEqual(validateConfigs(config), []);
-  config["publication-previews.json"]["dpc-vqa"] = {
-    template: "narrative", takeaway: original.takeaway, intro: original.intro,
-    headline: original.headline, method: original.method, figure: original.figure,
-    figureCaption: original.figureCaption, steps: original.steps,
-    blendFigureBackground: false, labels: { idea: "Research question" },
+  const paper = config["publications.json"][0];
+  const paperId = paper.id;
+
+  const narrative = {
+    takeaway: "Research takeaway",
+    intro: "Research introduction",
+    headline: "Research headline",
+    method: "Research methodology",
+    figure: paper.image,
+    figureCaption: "Method illustration",
+    steps: [
+      {
+        title: "Step 1",
+        text: "Research step description",
+      },
+    ],
   };
+
+  // Basic template.
+  config["publication-previews.json"] = {
+    [paperId]: {
+      template: "basic",
+      abstractExpanded: true,
+    },
+  };
+
   assert.deepEqual(validateConfigs(config), []);
-  delete config["publication-previews.json"]["dpc-vqa"].figure;
-  assert.match(validateConfigs(config).join("\n"), /figure: required for narrative/);
-  config["publication-previews.json"]["dpc-vqa"] = { ...original, layout: original.template };
-  delete config["publication-previews.json"]["dpc-vqa"].template;
+
+  // Narrative template.
+  config["publication-previews.json"][paperId] = {
+    template: "narrative",
+    ...narrative,
+    blendFigureBackground: false,
+    labels: {
+      idea: "Research question",
+    },
+  };
+
+  assert.deepEqual(validateConfigs(config), []);
+
+  // Missing required narrative figure.
+  delete config["publication-previews.json"][paperId].figure;
+
+  assert.match(
+    validateConfigs(config).join("\n"),
+    /figure: required for narrative/
+  );
+
+  // Legacy layout configuration.
+  config["publication-previews.json"][paperId] = {
+    ...narrative,
+    layout: "narrative",
+  };
+
   assert.deepEqual(validateConfigs(config), []);
 });
+
